@@ -70,6 +70,7 @@ action :before_restart do
     pid new_resource.pid
     stderr_redirect new_resource.stderr_redirect
     stdout_redirect new_resource.stdout_redirect
+    exec_prefix new_resource.exec_prefix
 
     daemonize true
     upstart new_resource.upstart
