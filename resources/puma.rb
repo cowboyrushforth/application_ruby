@@ -33,6 +33,7 @@ attribute :stdout_redirect, kind_of: [String, NilClass], default: nil
 attribute :on_worker_boot, kind_of: [String, NilClass], default: nil
 attribute :upstart, kind_of: [TrueClass, FalseClass], default: false
 attribute :logrotate, kind_of: [TrueClass, FalseClass], default: false
+attribute :rails_app_vars, kind_of: [Hash, NilClass], default: {}
 
 #def options(*args, &block)
 #  @options ||= Mash[:tcp_nodelay => true, :backlog => 100]

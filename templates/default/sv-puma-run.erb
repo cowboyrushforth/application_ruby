@@ -26,6 +26,10 @@ exec /bin/bash <<'EOT'
   cd <%= @options[:app].path %>/current
   export RAILS_ENV=<%= @options[:app].environment_name %>
 
+  <% @options[:rails_app_vars].each do |k,v| %>
+    export #{k}="#{v}"
+  <% end %>
+
   exec 2>&1
   exec <%= node[:runit][:chpst_bin] %> \
   <%= @options[:bundler] ? "#{ @options[:bundle_command] } exec" : '' %> puma \
